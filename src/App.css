@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+#root, html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    height: 100vh;
+  
+}
+.app{
+    height: 100%;
+    background-color: red;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.3)),url('./img/mmot4.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card{
+    background-color: whitesmoke;
+    width: 36%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius:25px;
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading{
+    display: flex;
+    align-items: center;
+    height: 580px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight:300;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button{
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 200px;
+    width: 200px;
+    padding: 5px 5px;
+    opacity: 1;
+    background-color: #ffffff;
+    border: 1px solid rgba(22,76,167,0.6);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button::after{
+    background-color: yellow;
+    border-radius: 3rem;
+    content:'';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-100%,0) rotate(10deg);
+    transform-origin: top left;
+    transition: .3s;
+    transform: ease-out;
+    will-change: transform;
+    z-index: -1;
 }
-
-.App-link {
-  color: #61dafb;
+.button:hover::after{
+    transform: translate(0,0)
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button:hover{
+    border: 2px solid transparent;
+    color:indigo;
+    transform: scale(1.05);
+    will-change: transform;
+}
+@media only screen and (max-width:600px){
+    .card{
+        width: 80%;
+        height: 30%;
+    }
 }
